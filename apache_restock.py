@@ -11,7 +11,7 @@ import os
 
 
 
-webhook_url = os.environ.get("WEBHOOK_URL")
+webhook_url = str(os.environ.get("WEBHOOK_URL"))
 
 
 nike = [
@@ -75,8 +75,8 @@ for supreme_link in supreme:
     })
 
 
-cookie = os.environ.get("COOKIE")
-user_agent = os.environ.get("USER_AGENT")
+cookie = str(os.environ.get("COOKIE"))
+user_agent = str(os.environ.get("USER_AGENT"))
 webscrape_data = {
     "proxies": {
         "http": "178.128.168.88",
