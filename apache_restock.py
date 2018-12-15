@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import random
 import json
 import time
 import os
@@ -78,13 +79,13 @@ for supreme_link in supreme:
 cookie = str(os.environ.get("COOKIE"))
 user_agent = str(os.environ.get("USER_AGENT"))
 webscrape_data = {
-    "proxies": {
-        "http": "178.128.168.88",
-        "http": "89.38.144.95",
-        "http": "145.239.252.51",
-        "http": "178.128.173.108",
-        "http": "185.42.221.246"
-    },
+    "proxies": [
+        "178.128.168.88",
+        "89.38.144.95",
+        "145.239.252.51",
+        "178.128.173.108",
+        "185.42.221.246"
+    ],
     "headers": {
         "nike": {
             "cookie": cookie,
@@ -196,7 +197,8 @@ def get_supreme_link_data(link):
 
 def get_nike_link_stock(link):
     global webscrape_data
-    request = requests.get(link, headers=webscrape_data["headers"]["nike"], proxies=webscrape_data["proxies"])
+    proxy = {"http": random.choice(webscrape_data["proxies"])}
+    request = requests.get(link, headers=webscrape_data["headers"]["nike"], proxies=proxy)
     if request.status_code != 200:
         print("Getting Nike Stock Request Failed: {0} because {1}\n\nLink: {2}".format(request.status_code, request.reason, link))
         return {
@@ -244,7 +246,8 @@ def get_nike_link_stock(link):
 def get_adidas_link_stock(link_code):
     global webscrape_data
     link = webscrape_data["adidas_availability_link"].format(link_code)
-    request = requests.get(link, headers=webscrape_data["headers"]["adidas"], proxies=webscrape_data["proxies"])
+    proxy = {"http": random.choice(webscrape_data["proxies"])}
+    request = requests.get(link, headers=webscrape_data["headers"]["adidas"], proxies=proxy)
     if request.status_code != 200:
         print("Getting Adidas Stock Request Failed: {0} because {1}\n\nLink: {2}".format(request.status_code, request.reason, link))
         return {
@@ -284,7 +287,8 @@ def get_adidas_link_stock(link_code):
 
 def get_supreme_link_stock(link):
     global webscrape_data
-    request = requests.get(link, headers=webscrape_data["headers"]["supreme"], proxies=webscrape_data["proxies"])
+    proxy = {"http": random.choice(webscrape_data["proxies"])}
+    request = requests.get(link, headers=webscrape_data["headers"]["supreme"], proxies=proxy)
     if request.status_code != 200:
         print("Getting Supreme Stock Request Failed: {0} because {1}\n\nLink: {2}".format(request.status_code, request.reason, link))
         return {
