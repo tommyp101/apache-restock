@@ -87,7 +87,7 @@ webscrape_data = {
     },
     "headers": {
         "nike": {
-            "cookie": cookie
+            "cookie": cookie,
             "user-agent": user_agent
         },
         "adidas": {
