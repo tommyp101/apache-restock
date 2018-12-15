@@ -325,7 +325,9 @@ def get_supreme_link_stock(link):
 #START
 
 print("Bot Started")
-print(webscrape_data["proxies"])
+print(len(webscrape_data["proxies"]))
+for x in webscrape_data["proxies"]:
+    print(x)
 print(webscrape_data["headers"]["nike"]["cookie"])
 
 
