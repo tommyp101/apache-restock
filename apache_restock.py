@@ -329,7 +329,7 @@ def get_supreme_link_stock(link):
 #START
 
 
-
+print("Starting Nike")
 
 for index, nike_link in enumerate(site_links["nike"]):
     stock_list = get_nike_link_stock(nike_link["link"])
@@ -346,7 +346,9 @@ for index, nike_link in enumerate(site_links["nike"]):
                     site_links["nike"][index]["last_in_stock_sizes"].append(size)
 
 
-
+                    
+                    
+print("Starting Adidas")
 
 for index, adidas_link in enumerate(site_links["adidas"]):
     stock_list = get_adidas_link_stock(adidas_link["adidas_item_id"])
@@ -365,6 +367,8 @@ for index, adidas_link in enumerate(site_links["adidas"]):
 
 
 
+print("Starting Supreme")              
+                    
 for index, supreme_link in enumerate(site_links["supreme"]):
     stock_list = get_supreme_link_stock(supreme_link["link"])
 
