@@ -314,17 +314,6 @@ print("Bot Started")
 
 
 
-data_list = get_supreme_link_data("https://www.supremenewyork.com/shop/jackets/zzlaqusmv/zoyc8fzxa")
-send_embed({
-    "title": "SUPREME Item Restock (click here)",
-    "description": data_list["item_name"],
-    "color": 0x1872e0,
-    "image": {"url": "https:" + data_list["image_url"]},
-    "url": "https://www.supremenewyork.com/shop/jackets/zzlaqusmv/zoyc8fzxa"
-})
-
-
-
 for index, nike_link in enumerate(site_links["nike"]):
     stock_list = get_nike_link_stock(nike_link["link"])
 
