@@ -45,7 +45,7 @@ supreme = [
 
 
 
-dd
+
 site_links = {
     "nike": [],
     "adidas": [],
@@ -88,13 +88,13 @@ webscrape_data = {
     "headers": {
         "nike": {
             "cookie": cookie,
-            "user-agent": user_agent
+            "User-Agent": user_agent
         },
         "adidas": {
-            "user-agent": user_agent
+            "User-Agent": user_agent
         },
         "supreme": {
-            "user-agent": user_agent
+            "User-Agent": user_agent
         }
     },
     "adidas_availability_link": "https://www.adidas.com/api/products/{0}/availability"
