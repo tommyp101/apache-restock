@@ -199,6 +199,11 @@ def get_nike_link_stock(link):
     request = requests.get(link, headers=webscrape_data["headers"]["nike"], proxies=webscrape_data["proxies"])
     if request.status_code != 200:
         print("Getting Nike Stock Request Failed: {0} because {1}\n\nLink: {2}".format(request.status_code, request.reason, link))
+        return {
+            "item_in_stock": False,
+            "in_stock": [],
+            "out_of_stock": []
+        }
     else:
         html_text = (request.text)
         soup = BeautifulSoup(html_text, features="lxml")
@@ -242,6 +247,11 @@ def get_adidas_link_stock(link_code):
     request = requests.get(link, headers=webscrape_data["headers"]["adidas"], proxies=webscrape_data["proxies"])
     if request.status_code != 200:
         print("Getting Adidas Stock Request Failed: {0} because {1}\n\nLink: {2}".format(request.status_code, request.reason, link))
+        return {
+            "item_in_stock": False,
+            "in_stock": [],
+            "out_of_stock": []
+        }
     else:
 
         sizes_dict = request.json()
@@ -277,6 +287,11 @@ def get_supreme_link_stock(link):
     request = requests.get(link, headers=webscrape_data["headers"]["supreme"], proxies=webscrape_data["proxies"])
     if request.status_code != 200:
         print("Getting Supreme Stock Request Failed: {0} because {1}\n\nLink: {2}".format(request.status_code, request.reason, link))
+        return {
+            "item_in_stock": False,
+            "in_stock": [],
+            "out_of_stock": []
+        }
     else:
         html_text = (request.text)
         soup = BeautifulSoup(html_text, features="lxml")
