@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+import os
 
 
 
@@ -10,7 +11,7 @@ import time
 
 
 
-webhook_url = "webhook_url"
+webhook_url = os.environ.get("WEBHOOK_URL")
 
 
 nike = [
@@ -74,8 +75,8 @@ for supreme_link in supreme:
     })
 
 
-cookie = ""
-user-agent = ""
+cookie = os.environ.get("COOKIE")
+user_agent = os.environ.get("USER_AGENT")
 webscrape_data = {
     "proxies": {
         "http": "178.128.168.88",
