@@ -309,6 +309,10 @@ def get_supreme_link_stock(link):
 
 #START
 
+print("Bot Started")
+
+
+
 
 data_list = get_supreme_link_data("https://www.supremenewyork.com/shop/jackets/zzlaqusmv/zoyc8fzxa")
 send_embed({
@@ -381,7 +385,9 @@ for index, supreme_link in enumerate(site_links["supreme"]):
     #             site_links["nike"][index][2].append(size)
 
 
+print("Loop Started")
 
+    
 while True:
     time.sleep(60)
 
