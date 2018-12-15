@@ -473,7 +473,7 @@ while True:
                         "title": "Item Restock (click here)",
                         "description": link_data["item_name"],
                         "color": 0x1872e0,
-                        "image": {"url": link_data["image_url"]},
+                        "image": {"url": "https:" + link_data["image_url"]},
                         "url": supreme_link["link"]
                     })
             else:
@@ -486,7 +486,7 @@ while True:
                                 "title": "Item Restock Size {0} (click here)".format(size),
                                 "description": link_data["item_name"],
                                 "color": 0x1872e0,
-                                "image": {"url": link_data["image_url"]},
+                                "image": {"url": "https:" + link_data["image_url"]},
                                 "url": supreme_link["supreme"]
                             })
         site_links["supreme"][index]["last_in_stock_sizes"] = new_last_stock_list
